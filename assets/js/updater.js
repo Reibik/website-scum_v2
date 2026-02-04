@@ -1,76 +1,68 @@
 // assets/js/updater.js
 
-const CHECK_INTERVAL = 60000; // Проверять каждые 60 секунд
-let isUpdateVisible = false;
+const CHECK_INTERVAL = 30000; // Проверять каждые 30 секунд
+let isNotificationShown = false;
 
-async function checkForUpdates() {
+async function checkVersion() {
     try {
-        // Добавляем ?t=... чтобы сам файл версии не закешировался
+        // Добавляем случайное число (?t=...), чтобы браузер не читал старый файл из памяти
         const response = await fetch('version.json?t=' + new Date().getTime());
+        if (!response.ok) return;
+
         const data = await response.json();
         const serverVersion = data.version;
         const localVersion = localStorage.getItem('site_version');
 
-        // Если это первый заход - просто сохраняем версию
+        // Если игрок зашел первый раз — просто запоминаем версию
         if (!localVersion) {
             localStorage.setItem('site_version', serverVersion);
             return;
         }
 
-        // Если версии отличаются и уведомление еще не висит
-        if (serverVersion !== localVersion && !isUpdateVisible) {
-            showUpdateNotification(serverVersion);
+        // Если версии не совпадают и уведомление еще не показано
+        if (serverVersion !== localVersion && !isNotificationShown) {
+            showUpdateUI(serverVersion);
         }
 
-    } catch (error) {
-        console.warn('Не удалось проверить обновления:', error);
+    } catch (err) {
+        console.log('Update check failed (offline?)', err);
     }
 }
 
-function showUpdateNotification(newVersion) {
-    isUpdateVisible = true;
+function showUpdateUI(newVersion) {
+    isNotificationShown = true;
 
-    // Создаем плашку уведомления (если у тебя есть toast.css, используем похожие стили)
-    const toast = document.createElement('div');
-    toast.className = 'update-toast';
-    toast.innerHTML = `
-        <div class="update-content">
-            <span class="update-icon">⚡</span>
-            <div>
-                <div class="update-title">ДОСТУПНО ОБНОВЛЕНИЕ</div>
-                <div class="update-desc">Загружена новая версия сайта</div>
-            </div>
+    // Создаем элемент уведомления
+    const div = document.createElement('div');
+    div.className = 'update-notification';
+    div.innerHTML = `
+        <div class="update-text">
+            <strong>⚡ ОБНОВЛЕНИЕ</strong>
+            <span>Доступна новая версия сайта</span>
         </div>
-        <button class="btn-refresh" onclick="applyUpdate('${newVersion}')">ОБНОВИТЬ ↻</button>
+        <button onclick="applyUpdate('${newVersion}')">ОБНОВИТЬ ↻</button>
     `;
 
-    document.body.appendChild(toast);
-
-    // Звук уведомления (если есть audio.js)
-    const audio = new Audio('assets/audio/hover.mp3'); 
-    audio.volume = 0.2;
-    audio.play().catch(() => {});
+    document.body.appendChild(div);
+    
+    // Звук (если есть)
+    const audio = new Audio('assets/audio/notification.mp3'); // Можно убрать, если звука нет
+    audio.volume = 0.3;
+    audio.play().catch(()=>{});
 }
 
 function applyUpdate(newVersion) {
-    // 1. Сохраняем новую версию
+    // Сохраняем новую версию
     localStorage.setItem('site_version', newVersion);
     
-    // 2. Очищаем кеш (специфичный для ServiceWorker, если есть)
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.getRegistrations().then(function(registrations) {
-            for(let registration of registrations) {
-                registration.unregister();
-            }
-        });
-    }
-
-    // 3. Перезагружаем страницу принудительно
-    location.reload(true);
+    // Принудительная перезагрузка страницы без кеша
+    location.reload();
 }
 
-// Запуск проверки при загрузке и интервал
+// Запуск
 document.addEventListener('DOMContentLoaded', () => {
-    checkForUpdates();
-    setInterval(checkForUpdates, CHECK_INTERVAL);
+    // Первая проверка через 1 секунду после загрузки
+    setTimeout(checkVersion, 1000);
+    // И потом каждые 30 сек
+    setInterval(checkVersion, CHECK_INTERVAL);
 });
