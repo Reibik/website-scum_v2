@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELON SCUM PROJECT | Официальный сайт</title>
+    
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+    <meta name="description" content="ELON PROJECT - Топовые серверы SCUM. PVE и PVP, Высокий лут x5, Стабильный FPS.">
+    <meta property="og:title" content="ELON SCUM PROJECT">
+    <meta property="og:description" content="Присоединяйся к выживанию нового уровня! 2 сервера, ивенты, крутое комьюнити.">
+    <meta property="og:image" content="https://i.postimg.cc/L4TtXw7n/Gemini-Generated-Image-vvg9bpvvg9bpvvg9.png">
+    <meta name="theme-color" content="#ff6600">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/home.css"> 
+	<link rel="stylesheet" href="assets/css/seasons.css">
+	<link rel="stylesheet" href="assets/css/loader.css">
+	<link rel="stylesheet" href="assets/css/toast.css">
+	<link rel="stylesheet" href="assets/css/desktop.css">
+	<script defer src="assets/js/desktop-fx.js"></script>
+	<script defer src="assets/js/toast.js"></script>
+	<script defer src="assets/js/loader.js"></script>
+	<script defer src="assets/js/home.js"></script>
+	<script defer src="assets/js/ui.js"></script>
+	<script defer src="assets/js/seasons.js"></script>
+    <script defer src="assets/js/updater.js"></script>
+	</head>
+<body>
+    <div id="preloader">
+        <div class="loader-content">
+            <div class="loader-ring"></div>
+            <div class="loader-core"></div>
+        </div>
+        <div class="loader-text">ПОДКЛЮЧЕНИЕ К BCU...</div>
+    </div>
+
+    <header>
+        <a href="index.html" class="logo">ELON <span>PROJECT</span></a>
+
+        <div class="mobile-menu-btn" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav class="nav" id="mainNav">
+            <a href="index.html" class="nav-item"><span>🏠 Главная</span></a>
+            <a href="status.html" class="nav-item"><span>📡 Статус</span></a>
+            <a href="map.html" class="nav-item"><span>🗺️ Карта</span></a>
+            <a href="news.html" class="nav-item"><span>📰 Новости</span></a>
+            <a href="media.html" class="nav-item"><span>📸 Медиа</span></a>
+            <a href="faq.html" class="nav-item"><span>❓ FAQ</span></a>
+            <a href="staff.html" class="nav-item"><span>👥 Команда</span></a> 
+            <a href="rules.html" class="nav-item"><span>📜 Правила</span></a>
+            <a href="donate.html" class="nav-item donate-btn"><span>💰 Донат</span></a>
+            <a href="https://discord.com/invite/tkCmnaQRdX" target="_blank" class="nav-item discord-btn"><span>💬 Discord</span></a>
+        </nav>
+
+        <div class="wargm-buttons">
+            <a href='https://wargm.ru/server/71882' target="_blank"><img src='https://wargm.ru/primg88/71882.png' alt='Rating 1'></a>
+            <a href='https://wargm.ru/server/77278' target="_blank"><img src='https://wargm.ru/primg88/77278.png' alt='Rating 2'></a>
+        </div>
+    </header>
+	
+    <section class="hero">
+        <video autoplay muted loop playsinline class="hero-video-bg">
+            <source src="assets/img/bg.mp4" type="video/mp4">
+        </video>
+        
+        <h1>Выживание<br>Нового Уровня</h1>
+        <p>Эксклюзивный сервер SCUM с уникальной экономикой, сбалансированным PVE, PvP и высоким FPS.</p>
+        
+        <div class="btn-group">
+            <a href="https://discord.com/invite/tkCmnaQRdX" target="_blank" class="btn btn-discord">Войти в Discord</a>
+            <a href="https://wargm.ru/project/3696" target="_blank" class="btn btn-vote">Проект на WARGM</a>
+        </div>
+    </section>
+
+    <section class="servers-showcase">
+        
+        <div class="server-card-pro pve">
+            <div class="card-bg" style="background-image: url('https://i.postimg.cc/L4TtXw7n/Gemini_Generated_Image_vvg9bpvvg9bpvvg9.png');"></div>
+            <div class="card-overlay"></div>
+            
+            <div class="card-content">
+                <div class="card-header">
+                    <div class="status-badge online">
+                        <span class="pulse-dot"></span> ONLINE
+                    </div>
+                    <h2>ELON #1 [PvE]</h2>
+                </div>
+                
+                <div class="card-meta">
+                    <span>☠️ No Mechs</span>
+                    <span>🎒 Loot x5</span>
+                    <span>🌍 RU Region</span>
+                </div>
+
+                <div class="card-stats">
+                    <div class="stat-box">
+                        <span class="stat-label">Игроков</span>
+                        <span class="stat-value" id="playerCount1">Loading...</span>
+                    </div>
+                    <div class="server-progress">
+                        <div class="progress-fill" style="width: 45%"></div>
+                    </div>
+                </div>
+
+                <div class="card-actions">
+                    <button class="btn-info" onclick="openModal('modal-server-1')">ℹ️ О сервере</button>
+                    <button class="btn-connect" onclick="copyText('192.168.1.1:7000')">📋 IP</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="server-card-pro pvp">
+            <div class="card-bg" style="background-image: url('https://i.postimg.cc/wMhzgqP3/Gemini_Generated_Image_ka85rkka85rkka85.png');"></div>
+            <div class="card-overlay"></div>
+
+            <div class="card-content">
+                <div class="card-header">
+                    <div class="status-badge online">
+                        <span class="pulse-dot"></span> ONLINE
+                    </div>
+                    <h2>ELON #2 [PvP]</h2>
+                </div>
+
+                <div class="card-meta">
+                    <span>🤖 Mechs ON</span>
+                    <span>🎒 Loot x5</span>
+                    <span>💥 High PvP</span>
+                </div>
+
+                <div class="card-stats">
+                    <div class="stat-box">
+                        <span class="stat-label">Игроков</span>
+                        <span class="stat-value" id="playerCount2">Loading...</span>
+                    </div>
+                    <div class="server-progress">
+                        <div class="progress-fill" style="width: 70%"></div>
+                    </div>
+                </div>
+
+                <div class="card-actions">
+                    <button class="btn-info" onclick="openModal('modal-server-2')">ℹ️ О сервере</button>
+                    <button class="btn-connect" onclick="copyText('192.168.1.2:7002')">📋 IP</button>
+                </div>
+            </div>
+        </div>
+    </section>
+	
+	<div class="countdown-container">
+		<h3>🔥 До Глобального Ивента:</h3>
+		<div id="countdown">
+			<div class="time-box"><span id="days">00</span><small>Дней</small></div>
+			<div class="time-box"><span id="hours">00</span><small>Часов</small></div>
+			<div class="time-box"><span id="minutes">00</span><small>Мин</small></div>
+			<div class="time-box"><span id="seconds">00</span><small>Сек</small></div>
+		</div>
+	</div>
+	
+    <section class="features">
+        <div class="feature-card">
+            <h3>⚡ Высокий FPS</h3>
+            <p>Наше железо расположено в топовом дата-центре. Никаких лагов и десинков даже при полном онлайне. Максимальная производительность.</p>
+        </div>
+        <div class="feature-card">
+            <h3>💰 Уникальная экономика</h3>
+            <p>Сбалансированный лут x3. Торговые зоны, бот-магазин в Discord и эксклюзивные предметы, доступные только на нашем проекте.</p>
+        </div>
+        <div class="feature-card">
+            <h3>⚔️ PvP и Ивенты</h3>
+            <p>Регулярные турниры за ценный лут, выделенные PvP зоны и конвои. Активная администрация следит за честной игрой.</p>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <a href="index.html" class="footer-logo">ELON <span>PROJECT</span></a>
+                <p class="footer-desc">
+                    Эксклюзивный комплекс серверов SCUM. Сбалансированная экономика, уникальные ивенты и отзывчивая администрация.
+                </p>
+            </div>
+            <div class="footer-col">
+                <h3>Навигация</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="status.html">Мониторинг</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="rules.html">Правила сервера</a></li>
+                    <li><a href="donate.html">Магазин</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Сообщество</h3>
+                <ul class="footer-links">
+                    <li><a href="https://discord.com/invite/tkCmnaQRdX" target="_blank">Discord Сервер</a></li>
+                    <li><a href="https://wargm.ru/project/3696" target="_blank">Голосовать на WARGM</a></li>
+                    <li><a href="#" target="_blank">Группа VK (Скоро)</a></li> 
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025-2026 ELON SCUM PROJECT. Все права защищены.</p>
+            <p style="margin-top: 5px; opacity: 0.5;">Design by Elon Team</p>
+        </div>
+    </footer>
+
+    <div id="modal-server-1" class="modal-overlay" onclick="closeModal('modal-server-1')">
+        <div class="modal-window" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeModal('modal-server-1')">×</button>
+            
+            <div class="modal-header">
+                <h2>ELON #1 <span style="color: #00ff41;">[PvE]</span></h2>
+                <div class="modal-subtitle">Рай для строителей и выживания</div>
+            </div>
+
+            <div class="modal-body">
+                <p>Идеальный сервер для тех, кто хочет изучить механики SCUM без страха получить пулю в спину. Огромный лут, отсутствие мехов и дружелюбное комьюнити.</p>
+                
+                <ul class="server-features-list">
+                    <li>☠️ <b>Mechs:</b> Отключены (OFF)</li>
+                    <li>🎒 <b>Loot:</b> x5 (Максимальный спавн)</li>
+                    <li>🧟 <b>Zombies:</b> Усиленные (x2 урон)</li>
+                    <li>🌑 <b>Ночи:</b> Короткие (30 минут)</li>
+                    <li>🚗 <b>Транспорт:</b> Спавн увеличен, есть дилер</li>
+                    <li>🛒 <b>Торговля:</b> Глобальный чат + Safe Zones</li>
+                    <li>👷 <b>Стройка:</b> Без ограничений по высоте</li>
+                </ul>
+
+                <div class="modal-alert">
+                    ⚠️ Убийства игроков запрещены везде, кроме "Красных Зон" (военные бункеры).
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn-connect full-width" onclick="copyText('192.168.1.1:7000')">Скопировать IP</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-server-2" class="modal-overlay" onclick="closeModal('modal-server-2')">
+        <div class="modal-window" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeModal('modal-server-2')">×</button>
+            
+            <div class="modal-header">
+                <h2>ELON #2 <span style="color: #ff3333;">[PvP]</span></h2>
+                <div class="modal-subtitle">Хардкор, Рейды и Доминирование</div>
+            </div>
+
+            <div class="modal-body">
+                <p>Классический выживач с повышенными ставками. Собирай клан, строй неприступную базу и рейди соседей. Здесь выживает сильнейший.</p>
+                
+                <ul class="server-features-list">
+                    <li>🤖 <b>Mechs:</b> Включены (Ослабленные)</li>
+                    <li>🎒 <b>Loot:</b> x5 (Быстрый старт)</li>
+                    <li>💣 <b>Raid:</b> Разрешен только в выходные (18:00 - 23:00)</li>
+                    <li>🎯 <b>Bot Shop:</b> Работает 24/7</li>
+                    <li>🔫 <b>Урон:</b> Стандартный (x1.0)</li>
+                    <li>🚁 <b>AirDrop:</b> Каждые 40 минут</li>
+                    <li>🏆 <b>KillFeed:</b> Отображение убийств в Discord</li>
+                </ul>
+
+                <div class="modal-alert">
+                    ⚠️ Запрещена застройка дорог и мостов. Максимум 10 человек в скваде.
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn-connect full-width" onclick="copyText('192.168.1.2:7002')">Скопировать IP</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
